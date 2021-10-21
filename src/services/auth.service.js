@@ -3,9 +3,9 @@ const User = require('../model/user')
 const bcrypt = require('bcrypt')
 const msg = require('../helpers/messages')
 
-const suthService = {
+const authService = {
     signToken: async (id) =>{
-        return jwt.sign({ id }, 'My app', {
+        return jwt.sign({ id }, process.env.JWT_SECRET, {
             expiresIn: 60 * 60 *24
         })
     },
