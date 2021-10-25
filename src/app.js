@@ -16,7 +16,7 @@ mongoose.connect(process.env.DB_STRING)
 app.use(morgan('dev'))
 app.use(cors())
 
-//rutas
+//rutas (endpoint)
 app.use('/auth', authRoutes)
 
 //inicio del servidor
