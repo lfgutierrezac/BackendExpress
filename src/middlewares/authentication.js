@@ -6,7 +6,7 @@ const Authorized = (req, res, next) => {
         res.status(403).json('unauthorized')
     }// si si hay token
     try {
-        const decode = jwt.verify(token, proccess.env.JWT_SECRET) // decodifica el token
+        const decoded = jwt.verify(token, proccess.env.JWT_SECRET) // decodifica el token
         req.user = decoded
         next()
     } catch (error) {
