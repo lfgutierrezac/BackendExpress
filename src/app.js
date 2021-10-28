@@ -17,6 +17,7 @@ app.use('/documentation',express.static(path.join(__dirname,'../doc/')))
 //middlewares
 app.use(morgan('dev'))
 app.use(cors())
+app.use(express.urlencoded({extended:false}))
 
 //rutas (endpoint)
 app.use('/auth', authRoutes)

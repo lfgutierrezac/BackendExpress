@@ -4,8 +4,8 @@ const bcrypt = require('bcrypt')
 const msg = require('../helpers/messages')
 
 const authService = {
-    signToken: async function (id){
-        return jwt.sign({ id }, process.env.JWT_SECRET, {
+    signToken: async function (_id){
+        return jwt.sign({ _id }, process.env.JWT_SECRET, {
             expiresIn: 60 * 60 * 24 * 365
         })
     },
@@ -26,7 +26,7 @@ const authService = {
             return error
         }
     },
-    register: async function(userData){
+    register: async function(userData){       
         try {
             let hash = await bcrypt.hash(userData.password, 10).then(res => res)
             userData.password = hash
