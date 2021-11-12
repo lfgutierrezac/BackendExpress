@@ -1,5 +1,4 @@
 const msg = require('../helpers/messages')
-const { validationResult } = require('express-validator')
 const Income = require('../models/income')
 
 const incomeController = {
